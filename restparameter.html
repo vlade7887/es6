@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use the Rest Parameter with Function Parameters</title>
+</head>
+<body>
+  <script>
+    //   function howMany(...args) {
+    //     return "You have passed " + args.length + " arguments.";
+    //   }
+    //   console.log(howMany(0, 1, 2));
+    //   console.log(howMany("string", null, [1, 2, 3], { }));
+
+
+
+    //   const sum = (...args) => {
+    
+    //   let total = 0;
+    //   for (let i = 0; i < args.length; i++) {
+    //     total += args[i];
+    //   }
+    //   return total;
+    // }
+
+    // console.log(sum(1,2,3,4))
+
+
+    //////////////////////////////////////////
+    ////////////////Use the Spread Operator to Evaluate Arrays In-Place/////////////
+    
+
+// const arr = [6, 89, 3, 45];
+// const maximus = Math.max(...arr);
+// console.log(maximus)
+// const spreaded = [...arr];
+// console.log(spreaded)
+
+
+// const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+// let arr2;
+
+// arr2 = [...arr1]; 
+
+// console.log(arr2);
+
+
+//////////////////////////////////////
+////////////////Use Destructuring Assignment to Extract Values from Objects//////////
+
+// const user = { name: 'John Doe', age: 34 };
+
+
+// const {name, age} = user;
+
+// const { name: userName, age: userAge } = user;
+
+
+
+// const HIGH_TEMPERATURES = {
+//   yesterday: 75,
+//   today: 77,
+//   tomorrow: 80
+// };
+
+
+
+// const {today, tomorrow} = HIGH_TEMPERATURES;
+
+// console.log(today)
+// console.log(tomorrow)
+
+// const HIGH_TEMPERATURES = {
+//   yesterday: 75,
+//   today: 77,
+//   tomorrow: 80
+// };
+
+
+  
+// const {today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+// console.log(tomorrow)
+
+////////////////////////////////////
+///////////////Use Destructuring Assignment to Assign Variables from Nested Objects////////////
+
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+
+
+const { johnDoe:{age, email}} = user;
+console.log()
+
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+
+  
+const { today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+console.log(lowToday)
+
+///////////////////////////////////////////////////
+///////////////////////Use Destructuring Assignment to Assign Variables from Arrays///////
+
+
+// const [a, b] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b);
+
+// const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, c);
+
+// let a = 8, b = 6;
+// [a , b] = [b, a]
+
+// console.log(a, b)
+
+// const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+// console.log(a, b);
+// console.log(arr)
+
+
+
+function removeFirstTwo(list) {
+  const [a,b, ...shortList] = list
+  return shortList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+console.log(sourceWithoutFirstTwo)
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////
+////////////////Use Destructuring Assignment to Pass an Object as a Function's Parameters
+
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+
+}
+
+
+
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+
+const half = ({min, max}) => (stats.max + stats.min) / 2.0; 
+
+
+console.log(half(stats))
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
