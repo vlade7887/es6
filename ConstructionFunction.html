@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
+}
+
+
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
+
+const zeus = new SpaceShuttle('Jupiter');
+
+zeus.takeOff();
+
+
+const atlas = new Rocket();
+
+atlas.launch();
+
+
+
+class Vegetable{
+  constructor(name){
+  
+    this.name = name;
+  }
+  eatIT(){
+    console.log("I want to eat " + this.name)
+  }
+}
+
+
+
+const carrot = new Vegetable('carrot');
+carrot.eatIT();
+console.log(carrot.name); 
+
+
+
+  </script>
+</body>
+</html>

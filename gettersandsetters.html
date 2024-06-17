@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getters and setters</title>
+</head>
+<body>
+  <script>
+
+// class Book {
+//   constructor(author) {
+//     this._author = author;
+//   }
+//   // getter
+//   get writer() {
+//     return this._author;
+//   }
+//   // setter
+//   set writer(updatedAuthor) {
+//     this._author = updatedAuthor;
+//   }
+// }
+// const novel = new Book('anonymous');
+// console.log(novel.writer);
+// novel.writer = 'newAuthor';
+// console.log(novel.writer);
+
+
+
+
+
+
+class Thermostat {
+  constructor(fahrenheit) {
+    this._fahrenheit = fahrenheit;
+  }
+  // getter
+  get temperature() {
+    return (5 / 9) * (this._fahrenheit - 32);
+  }
+  // setter
+  set temperature(celcius) {
+    return this._fahrenheit = (celcius * 9.0) / 5 + 32;;
+  }
+}
+
+const thermos = new Thermostat(76);
+console.log(thermos.temperature);
+
+let temp = thermos.temperature; 
+thermos.temperature = 26;
+temp = thermos.temperature; 
+console.log(temp)
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
